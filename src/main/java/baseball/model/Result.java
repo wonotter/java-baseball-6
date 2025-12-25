@@ -1,0 +1,24 @@
+package baseball.model;
+
+public class Result {
+
+    private final int strikes;
+    private final int balls;
+
+    public Result(int strikes, int balls) {
+        this.strikes = strikes;
+        this.balls = balls;
+    }
+
+    public boolean isGameOver() {
+        return strikes == 3;
+    }
+
+    public int getStrikes() {
+        return strikes;
+    }
+
+    public int getBalls() {
+        return balls;
+    }
+}

@@ -9,7 +9,6 @@ import baseball.view.InputView;
 import baseball.view.OutputView;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class BaseballGameController {
 
@@ -70,12 +69,8 @@ public class BaseballGameController {
 
         String input = inputView.readNumber();
 
-        int[] inputNumbers = Stream.of(input.split(""))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-
-        for (int inputNumber : inputNumbers) {
-            Number number = new Number(inputNumber);
+        for (String inputNumber : input.split("")) {
+            Number number = Number.from(inputNumber);
             numbers.add(number);
         }
 

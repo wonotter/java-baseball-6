@@ -11,7 +11,8 @@ public class DefaultNumberGenerator implements BaseballNumberGenerator {
         List<Number> computer = new ArrayList<>();
 
         while (computer.size() < 3) {
-            Number randomNumber = new Number(Randoms.pickNumberInRange(1, 9));
+            int pickedNumber = Randoms.pickNumberInRange(1, 9);
+            Number randomNumber = Number.from(Integer.toString(pickedNumber));
 
             if (!computer.contains(randomNumber)) {
                 computer.add(randomNumber);

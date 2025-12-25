@@ -2,6 +2,7 @@ package baseball.exception;
 
 public enum ErrorMessage {
 
+    NUMBER_NOT_SUPPORTED("1~9 사이 정수만 입력 가능합니다."),
     NUMBER_OUT_OF_RANGE("유효한 숫자 범위를 벗어났습니다."),
     NUMBER_SIZE_NOT_MATCH("숫자 3개를 입력해 주세요."),
     NUMBER_DUPLICATED("중복된 숫자는 입력할 수 없습니다."),

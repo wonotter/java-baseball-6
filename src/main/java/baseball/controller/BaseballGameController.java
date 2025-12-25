@@ -1,6 +1,5 @@
 package baseball.controller;
 
-import baseball.exception.ErrorMessage;
 import baseball.model.BaseballNumberGenerator;
 import baseball.model.Number;
 import baseball.model.Numbers;
@@ -11,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseballGameController {
-
-    private static final int RESTART = 1;
-    private static final int QUIT = 2;
 
     private final InputView inputView;
     private final OutputView outputView;
@@ -34,16 +30,10 @@ public class BaseballGameController {
 
             playGame(answerNumbers);
 
-            int continueGame = Integer.parseInt(inputView.askRetry());
+            GameCommand command = GameCommand.from(inputView.askRetry());
 
-            if (continueGame == QUIT) {
+            if (command.isQuit()) {
                 break;
-            }
-
-            if (continueGame == RESTART) {
-                continue;
-            } else {
-                throw new IllegalArgumentException(ErrorMessage.GAME_CONTINUE_FAIL.getMessage());
             }
         }
     }

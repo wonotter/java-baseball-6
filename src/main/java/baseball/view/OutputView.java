@@ -9,20 +9,7 @@ public class OutputView {
     }
 
     public void printGuessResult(Result result) {
-        if (result.getBalls() == 0) {
-            if (result.getStrikes() == 0) {
-                System.out.println(CommonMessages.NOTHING.getMessage());
-            } else {
-                System.out.println(result.getStrikes() + CommonMessages.STRIKES.getMessage());
-            }
-        } else if (result.getStrikes() == 0) {
-            System.out.println(result.getBalls() + CommonMessages.BALLS.getMessage());
-        } else {
-            System.out.println(
-                    result.getBalls() + CommonMessages.BALLS.getMessage() +
-                            " " + result.getStrikes() + CommonMessages.STRIKES.getMessage()
-            );
-        }
+        System.out.println(result.toMessage());
     }
 
     public void printWinningMessage() {
